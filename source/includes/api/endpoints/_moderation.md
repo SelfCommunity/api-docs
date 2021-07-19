@@ -595,6 +595,7 @@ The following types of actions are "toggle actions" (calling the endpoint twice 
 
 <h4 id="unfollowcategory-responses">Responses</h4>
 
+
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|none|None|
