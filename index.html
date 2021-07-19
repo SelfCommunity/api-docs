@@ -38902,6 +38902,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 <h3 id='webhook-payload'>Webhook Payload</h3>
 <p>The body of a webhook payload is a JSON object that describes the target that triggered the webhook, as well as the event that has been triggered.</p>
 <h4 id='properties'>Properties</h4><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
@@ -38916,6 +38917,12 @@ Compare the signature (or signatures) in the header to the expected signature. F
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>event_id</td>
+<td>integer</td>
+<td>true</td>
+<td>The id of the event that triggered the webhook</td>
+</tr>
 <tr>
 <td>type</td>
 <td>string</td>
@@ -38936,6 +38943,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </tr>
 </tbody></table>
 <h3 id='list-of-category-events'>List of Category events</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39014,6 +39022,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </tr>
 </tbody></table>
 <h3 id='list-of-comment-events'>List of Comment events</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39087,6 +39096,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39158,6 +39168,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39280,6 +39291,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39338,6 +39350,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39466,6 +39479,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39496,6 +39510,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39553,6 +39568,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </tr>
 </tbody></table>
 <h3 id='list-of-poll-events'>List of Poll events</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39643,6 +39659,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </tr>
 </tbody></table>
 <h3 id='list-of-post-events'>List of Post events</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39719,6 +39736,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </tr>
 </tbody></table>
 <h3 id='list-of-status-events'>List of Status events</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39800,6 +39818,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -39894,6 +39913,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40017,6 +40037,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40077,6 +40098,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40161,6 +40183,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40253,6 +40276,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40312,6 +40336,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40380,6 +40405,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40530,6 +40556,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40572,6 +40599,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40614,6 +40642,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40656,6 +40685,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40678,6 +40708,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40695,6 +40726,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40748,6 +40780,7 @@ Compare the signature (or signatures) in the header to the expected signature. F
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40935,6 +40968,7 @@ All events with prefix notification.* include in the payload a field "recipients
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -40973,6 +41007,7 @@ All events with prefix notification.* include in the payload a field "recipients
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -41020,6 +41055,7 @@ All events with prefix notification.* include in the payload a field "recipients
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -41046,6 +41082,7 @@ All events with prefix notification.* include in the payload a field "recipients
 </ul>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1625471209.139224</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -41103,6 +41140,7 @@ All events with prefix notification.* include in the payload a field "recipients
 </tr>
 </tbody></table>
 <h3 id='list-of-vote-events'>List of Vote events</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vote.created"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mf">1623060368.026038</span><span class="p">,</span><span class="w">
     </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
