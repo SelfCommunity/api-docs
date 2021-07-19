@@ -93,6 +93,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {}
@@ -102,6 +103,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 | Name    | Type   | Required | Description                                                                   |
 |---------|--------|----------|-------------------------------------------------------------------------------|
+| event_id| integer| true     | The id of the event that triggered the webhook                                |
 | type    | string | true     | The name of the event that triggered the webhook                              |
 | created | float  | true     | The time or date that the event was triggered at                              |
 | data    | object | true     | Object that contains information about the event associated with the webhook. |
@@ -110,6 +112,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -179,6 +182,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -231,6 +235,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -301,6 +306,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -385,6 +391,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -443,6 +450,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -542,6 +550,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -571,6 +580,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -613,6 +623,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -694,6 +705,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -753,6 +765,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -813,6 +826,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -905,6 +919,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1026,6 +1041,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1085,6 +1101,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1167,6 +1184,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1258,6 +1276,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1316,6 +1335,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1384,6 +1404,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1533,6 +1554,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1573,6 +1595,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1615,6 +1638,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1657,6 +1681,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1677,6 +1702,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1693,6 +1719,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1744,6 +1771,7 @@ The body of a webhook payload is a JSON object that describes the target that tr
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1812,6 +1840,7 @@ All events with prefix notification.* include in the payload a field "recipients
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1849,6 +1878,7 @@ All events with prefix notification.* include in the payload a field "recipients
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1896,6 +1926,7 @@ All events with prefix notification.* include in the payload a field "recipients
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1921,6 +1952,7 @@ All events with prefix notification.* include in the payload a field "recipients
 
 ```json
 {
+    "event_id": 0,
     "type": "string",
     "created": 1625471209.139224,
     "data": {
@@ -1953,6 +1985,7 @@ All events with prefix notification.* include in the payload a field "recipients
 
 ```json
 {
+    "event_id": 0,
     "type": "vote.created",
     "created": 1623060368.026038,
     "data": {
