@@ -1304,7 +1304,8 @@ Return the user identified by the authentication token.
     "follow_user": true,
     "request_connection": true,
     "accept_connection": true
-  }
+  },
+  "role": "string"
 }
 ```
 

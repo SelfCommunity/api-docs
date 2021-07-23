@@ -45,7 +45,7 @@ This endpoint retrieves all users for moderation purpose.
 |---|---|---|---|---|
 |search|query|string|false|A search term.|
 |status|query|string|false|Valid values are: a, b, d, u|
-|days_blocked|query|string|false|Number of days of block or the special value "forever"|
+|days_blocked|query|string|false|"days" or "forever"|
 |limit|query|integer|false|Number of results to return per page.|
 |offset|query|integer|false|The initial index from which to return the results.|
 |order_by|query|string|false|Default ordering is: -date_joined. Other valid fields are: expire_at, blocked_at|
