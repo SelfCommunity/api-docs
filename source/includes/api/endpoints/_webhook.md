@@ -71,7 +71,8 @@ This Endpoint retrieve all webhook endpoints.
           "type": "comment.created",
           "added_at": "2019-08-24T14:15:22Z"
         }
-      ]
+      ],
+      "ssl_cert_verification": true
     }
   ]
 }
@@ -214,7 +215,8 @@ curl -X POST /api/v2/webhook/endpoint/ \
       {
         "type": "comment.created"
       }
-    ]
+    ],
+    "ssl_cert_verification": true
   }'
 ```
 
@@ -227,7 +229,8 @@ const inputBody = '{
     {
       "type": "comment.created"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -266,7 +269,8 @@ This endpoint create a Webhook Endpoint and connect it to the given [webhook eve
     {
       "type": "comment.created"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }
 ```
 
@@ -279,6 +283,7 @@ This endpoint create a Webhook Endpoint and connect it to the given [webhook eve
 |» description|body|string|false|none|
 |» events|body|list|true|none|
 |»» type|body|string|true|The [webhook event type](#list-of-events)|
+|» ssl_cert_verification|body|boolean|false|True if the SSL certificates for HTTPS requests must be enabled|
 
 > Example responses
 
@@ -297,7 +302,8 @@ This endpoint create a Webhook Endpoint and connect it to the given [webhook eve
       "type": "comment.created",
       "added_at": "2019-08-24T14:15:22Z"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }
 ```
 
@@ -374,7 +380,8 @@ This endpoint retrieves a specific webhook endpoint using ID.
       "type": "comment.created",
       "added_at": "2019-08-24T14:15:22Z"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }
 ```
 
@@ -408,7 +415,8 @@ curl -X PUT /api/v2/webhook/endpoint/{id}/ \
       {
         "type": "comment.created"
       }
-    ]
+    ],
+    "ssl_cert_verification": true
   }'
 ```
 
@@ -421,7 +429,8 @@ const inputBody = '{
     {
       "type": "comment.created"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -461,7 +470,8 @@ This endpoint update a specific webhook endpoint.
     {
       "type": "comment.created"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }
 ```
 
@@ -475,6 +485,7 @@ This endpoint update a specific webhook endpoint.
 |» description|body|string|false|none|
 |» events|body|list|true|none|
 |»» type|body|string|true|The [webhook event type](#list-of-events)|
+|» ssl_cert_verification|body|boolean|false|True if the SSL certificates for HTTPS requests must be enabled|
 
 > Example responses
 
@@ -493,7 +504,8 @@ This endpoint update a specific webhook endpoint.
       "type": "comment.created",
       "added_at": "2019-08-24T14:15:22Z"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }
 ```
 
@@ -527,7 +539,8 @@ curl -X PATCH /api/v2/webhook/endpoint/{id}/ \
       {
         "type": "comment.created"
       }
-    ]
+    ],
+    "ssl_cert_verification": true
   }'
 ```
 
@@ -540,7 +553,8 @@ const inputBody = '{
     {
       "type": "comment.created"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -579,7 +593,8 @@ This endpoint update a specific field of a specific webhook endpoint.
     {
       "type": "comment.created"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }
 ```
 
@@ -593,6 +608,7 @@ This endpoint update a specific field of a specific webhook endpoint.
 |» description|body|string|false|none|
 |» events|body|[object]|true|none|
 |»» type|body|string|true|The [webhook event type](#list-of-events)|
+|» ssl_cert_verification|body|boolean|false|True if the SSL certificates for HTTPS requests must be enabled|
 
 > Example responses
 
@@ -611,7 +627,8 @@ This endpoint update a specific field of a specific webhook endpoint.
       "type": "comment.created",
       "added_at": "2019-08-24T14:15:22Z"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }
 ```
 
@@ -841,7 +858,8 @@ This Endpoint expire the secret associated with this endpoint
       "type": "comment.created",
       "added_at": "2019-08-24T14:15:22Z"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }
 ```
 
@@ -938,25 +956,27 @@ This Endpoint reveal the secret associated with this endpoint
 This operation require authentication and admin role.
 </aside>
 
-### Resend a specific Webhook Endpoint Attempt
+### Resend a specific Webhook Endpoint Event
 
-<a id="opIdresendWebhookAttempt"></a>
+<a id="opIdresendWebhookEvent"></a>
 
 > Code samples
 
 ```shell
 # You can also use wget
-curl -X POST /api/v2/webhook/endpoint/attempt/{id}/resend/ \
+curl -X POST /api/v2/webhook/endpoint/{id}/event/resend/ \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
   -H 'Authorization: Bearer {access_token}' \
   --data-raw '{
+    "event": 0,
     "password": "string"
   }'
 ```
 
 ```javascript
 const inputBody = '{
+  "event": 0,
   "password": "string"
 }';
 const headers = {
@@ -965,7 +985,7 @@ const headers = {
   'Authorization': 'Bearer {access_token}'
 };
 
-fetch('/api/v2/webhook/endpoint/attempt/{id}/resend/',
+fetch('/api/v2/webhook/endpoint/{id}/event/resend/',
 {
   method: 'POST',
   body: inputBody,
@@ -979,28 +999,106 @@ fetch('/api/v2/webhook/endpoint/attempt/{id}/resend/',
 
 ```
 
-This Endpoint resend the attempt specifyed by the id parameter.
+This Endpoint resend the event specifyed as parameter to the endpoint spacifyed by the id parameter.
 
 <h4 id="http-request">HTTP Request</h4>
 
-`POST /api/v2/webhook/endpoint/attempt/{id}/resend/`
+`POST /api/v2/webhook/endpoint/{id}/event/resend/`
 
 > Body parameter
 
 ```json
 {
+  "event": 0,
   "password": "string"
 }
 ```
 
-<h4 id="resendwebhookattempt-parameters">Parameters</h4>
+<h4 id="resendwebhookevent-parameters">Parameters</h4>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|id|path|string|true|A unique integer value identifying this attempt.|
+|id|path|string|true|A unique integer value identifying this endpoint.|
+|event|body|integer|true|The id of the Event triggered by webhooks.|
 |password|body|string|false|Logged user password. It is used for security check.|
 
-<h4 id="resendwebhookattempt-responses">Responses</h4>
+<h4 id="resendwebhookevent-responses">Responses</h4>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|none|None|
+
+<aside class="notice">
+This operation require authentication and admin role.
+</aside>
+
+### Resend multiple Webhook Endpoint Event
+
+<a id="opIdresendWebhookMultipleEvent"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /api/v2/webhook/endpoint/{id}/event/resend/bulk/ \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json'
+  -H 'Authorization: Bearer {access_token}' \
+  --data-raw '{
+    "event": [0, 1],
+    "password": "string"
+  }'
+```
+
+```javascript
+const inputBody = '{
+  "event": [0, 1],
+  "password": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'Authorization': 'Bearer {access_token}'
+};
+
+fetch('/api/v2/webhook/endpoint/{id}/event/resend/bulk/',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+This Endpoint resend the events specifyed as parameter to the endpoint spacifyed by the id parameter.
+
+<h4 id="http-request">HTTP Request</h4>
+
+`POST /api/v2/webhook/endpoint/{id}/event/resend/bulk/`
+
+> Body parameter
+
+```json
+{
+  "event": [0, 1],
+  "password": "string"
+}
+```
+
+<h4 id="resendwebhookbulkevent-parameters">Parameters</h4>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|string|true|A unique integer value identifying this endpoint.|
+|event|body|[integer]|true|Array of ids of Events that the endpoint must resend.|
+|password|body|string|false|Logged user password. It is used for security check.|
+
+<h4 id="resendwebhookbulkevent-responses">Responses</h4>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
