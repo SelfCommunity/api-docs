@@ -1007,7 +1007,10 @@
                             <a href="#reveal-a-specific-webhook-endpoint-signing-secret" class="toc-h3 toc-link" data-title="Reveal a specific Webhook Endpoint signing secret">Reveal a specific Webhook Endpoint signing secret</a>                            
                           </li>
                           <li>
-                            <a href="#resend-a-specific-webhook-endpoint-attempt" class="toc-h3 toc-link" data-title="Resend a specific Webhook Endpoint Attempt">Resend a specific Webhook Endpoint Attempt</a>                            
+                            <a href="#resend-a-specific-webhook-endpoint-event" class="toc-h3 toc-link" data-title="Resend a specific Webhook Endpoint Event">Resend a specific Webhook Endpoint Event</a>                            
+                          </li>
+                          <li>
+                            <a href="#resend-multiple-webhook-endpoint-event" class="toc-h3 toc-link" data-title="Resend multiple Webhook Endpoint Event">Resend multiple Webhook Endpoint Event</a>                            
                           </li>
                       </ul>
                   </li>
@@ -28249,7 +28252,8 @@ curl <span class="nt">-X</span> GET /api/v2/webhook/endpoint/ <span class="se">\
           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment.created"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"added_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="w">
         </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"ssl_cert_verification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -28438,7 +28442,8 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/ <span class="se">
       {
         "type": "comment.created"
       }
-    ]
+    ],
+    "ssl_cert_verification": true
   }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
   "is_active": true,
@@ -28448,7 +28453,8 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/ <span class="se">
     {
       "type": "comment.created"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
@@ -28486,7 +28492,8 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/ <span class="se">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment.created"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ssl_cert_verification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h4 id="createwebhookendpoint-parameters">Parameters</h4>
@@ -28535,6 +28542,13 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/ <span class="se">
 <td>true</td>
 <td>The <a href="#list-of-events">webhook event type</a></td>
 </tr>
+<tr>
+<td>» ssl_cert_verification</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>True if the SSL certificates for HTTPS requests must be enabled</td>
+</tr>
 </tbody></table>
 
 <blockquote>
@@ -28554,7 +28568,8 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/ <span class="se">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment.created"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"added_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ssl_cert_verification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h4 id="createwebhookendpoint-responses">Responses</h4>
@@ -28649,7 +28664,8 @@ curl <span class="nt">-X</span> GET /api/v2/webhook/endpoint/<span class="o">{</
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment.created"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"added_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ssl_cert_verification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h4 id="retrievewebhookendpoint-responses">Responses</h4>
@@ -28692,7 +28708,8 @@ curl <span class="nt">-X</span> PUT /api/v2/webhook/endpoint/<span class="o">{</
       {
         "type": "comment.created"
       }
-    ]
+    ],
+    "ssl_cert_verification": true
   }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
   "is_active": true,
@@ -28702,7 +28719,8 @@ curl <span class="nt">-X</span> PUT /api/v2/webhook/endpoint/<span class="o">{</
     {
       "type": "comment.created"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
@@ -28740,7 +28758,8 @@ curl <span class="nt">-X</span> PUT /api/v2/webhook/endpoint/<span class="o">{</
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment.created"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ssl_cert_verification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h4 id="updatewebhookendpoint-parameters">Parameters</h4>
@@ -28796,6 +28815,13 @@ curl <span class="nt">-X</span> PUT /api/v2/webhook/endpoint/<span class="o">{</
 <td>true</td>
 <td>The <a href="#list-of-events">webhook event type</a></td>
 </tr>
+<tr>
+<td>» ssl_cert_verification</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>True if the SSL certificates for HTTPS requests must be enabled</td>
+</tr>
 </tbody></table>
 
 <blockquote>
@@ -28815,7 +28841,8 @@ curl <span class="nt">-X</span> PUT /api/v2/webhook/endpoint/<span class="o">{</
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment.created"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"added_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ssl_cert_verification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h4 id="updatewebhookendpoint-responses">Responses</h4>
@@ -28858,7 +28885,8 @@ curl <span class="nt">-X</span> PATCH /api/v2/webhook/endpoint/<span class="o">{
       {
         "type": "comment.created"
       }
-    ]
+    ],
+    "ssl_cert_verification": true
   }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
   "is_active": true,
@@ -28868,7 +28896,8 @@ curl <span class="nt">-X</span> PATCH /api/v2/webhook/endpoint/<span class="o">{
     {
       "type": "comment.created"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
@@ -28906,7 +28935,8 @@ curl <span class="nt">-X</span> PATCH /api/v2/webhook/endpoint/<span class="o">{
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment.created"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ssl_cert_verification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h4 id="partialupdatewebhookendpoint-parameters">Parameters</h4>
@@ -28962,6 +28992,13 @@ curl <span class="nt">-X</span> PATCH /api/v2/webhook/endpoint/<span class="o">{
 <td>true</td>
 <td>The <a href="#list-of-events">webhook event type</a></td>
 </tr>
+<tr>
+<td>» ssl_cert_verification</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>True if the SSL certificates for HTTPS requests must be enabled</td>
+</tr>
 </tbody></table>
 
 <blockquote>
@@ -28981,7 +29018,8 @@ curl <span class="nt">-X</span> PATCH /api/v2/webhook/endpoint/<span class="o">{
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment.created"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"added_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ssl_cert_verification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h4 id="partialupdatewebhookendpoint-responses">Responses</h4>
@@ -29290,7 +29328,8 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/<span class="o">{<
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment.created"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"added_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ssl_cert_verification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h4 id="secretexpirewebhookendpoint-responses">Responses</h4>
@@ -29420,21 +29459,23 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/<span class="o">{<
 <aside class="notice">
 This operation require authentication and admin role.
 </aside>
-<h3 id='resend-a-specific-webhook-endpoint-attempt'>Resend a specific Webhook Endpoint Attempt</h3>
-<p><a id="opIdresendWebhookAttempt"></a></p>
+<h3 id='resend-a-specific-webhook-endpoint-event'>Resend a specific Webhook Endpoint Event</h3>
+<p><a id="opIdresendWebhookEvent"></a></p>
 
 <blockquote>
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/attempt/<span class="o">{</span><span class="nb">id</span><span class="o">}</span>/resend/ <span class="se">\</span>
+curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/<span class="o">{</span><span class="nb">id</span><span class="o">}</span>/event/resend/ <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access_token}'</span> <span class="se">\</span>
   <span class="nt">--data-raw</span> <span class="s1">'{
+    "event": 0,
     "password": "string"
   }'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
+  "event": 0,
   "password": "string"
 }</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -29443,7 +29484,7 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/attempt/<span clas
   <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bearer {access_token}</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/webhook/endpoint/attempt/{id}/resend/</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/webhook/endpoint/{id}/event/resend/</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
@@ -29456,20 +29497,21 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/attempt/<span clas
 <span class="p">});</span>
 
 </code></pre></div>
-<p>This Endpoint resend the attempt specifyed by the id parameter.</p>
+<p>This Endpoint resend the event specifyed as parameter to the endpoint spacifyed by the id parameter.</p>
 
 <h4 id="http-request">HTTP Request</h4>
 
-<p><code>POST /api/v2/webhook/endpoint/attempt/{id}/resend/</code></p>
+<p><code>POST /api/v2/webhook/endpoint/{id}/event/resend/</code></p>
 
 <blockquote>
 <p>Body parameter</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h4 id="resendwebhookattempt-parameters">Parameters</h4>
+<h4 id="resendwebhookevent-parameters">Parameters</h4>
 
 <table><thead>
 <tr>
@@ -29485,7 +29527,14 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/attempt/<span clas
 <td>path</td>
 <td>string</td>
 <td>true</td>
-<td>A unique integer value identifying this attempt.</td>
+<td>A unique integer value identifying this endpoint.</td>
+</tr>
+<tr>
+<td>event</td>
+<td>body</td>
+<td>integer</td>
+<td>true</td>
+<td>The id of the Event triggered by webhooks.</td>
 </tr>
 <tr>
 <td>password</td>
@@ -29496,7 +29545,114 @@ curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/attempt/<span clas
 </tr>
 </tbody></table>
 
-<h4 id="resendwebhookattempt-responses">Responses</h4>
+<h4 id="resendwebhookevent-responses">Responses</h4>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>204</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
+<td>none</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+This operation require authentication and admin role.
+</aside>
+<h3 id='resend-multiple-webhook-endpoint-event'>Resend multiple Webhook Endpoint Event</h3>
+<p><a id="opIdresendWebhookMultipleEvent"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST /api/v2/webhook/endpoint/<span class="o">{</span><span class="nb">id</span><span class="o">}</span>/event/resend/bulk/ <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span>
+  <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access_token}'</span> <span class="se">\</span>
+  <span class="nt">--data-raw</span> <span class="s1">'{
+    "event": [0, 1],
+    "password": "string"
+  }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
+  "event": [0, 1],
+  "password": "string"
+}</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Accept</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bearer {access_token}</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/webhook/endpoint/{id}/event/resend/bulk/</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div>
+<p>This Endpoint resend the events specifyed as parameter to the endpoint spacifyed by the id parameter.</p>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code>POST /api/v2/webhook/endpoint/{id}/event/resend/bulk/</code></p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h4 id="resendwebhookbulkevent-parameters">Parameters</h4>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>A unique integer value identifying this endpoint.</td>
+</tr>
+<tr>
+<td>event</td>
+<td>body</td>
+<td>[integer]</td>
+<td>true</td>
+<td>Array of ids of Events that the endpoint must resend.</td>
+</tr>
+<tr>
+<td>password</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Logged user password. It is used for security check.</td>
+</tr>
+</tbody></table>
+
+<h4 id="resendwebhookbulkevent-responses">Responses</h4>
 
 <table><thead>
 <tr>
@@ -38340,7 +38496,8 @@ This operation require admin or moderation role.
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"comment.created"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"added_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ssl_cert_verification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div><h4 id='properties'>Properties</h4>
@@ -38415,6 +38572,13 @@ This operation require admin or moderation role.
 <td>false</td>
 <td>read-only</td>
 <td>none</td>
+</tr>
+<tr>
+<td>ssl_cert_verification</td>
+<td>body</td>
+<td>boolean</td>
+<td>false</td>
+<td>True if the SSL certificates for HTTPS requests must be enabled</td>
 </tr>
 </tbody></table>
 
