@@ -18,7 +18,8 @@
       "type": "comment.created",
       "added_at": "2019-08-24T14:15:22Z"
     }
-  ]
+  ],
+  "ssl_cert_verification": true
 }
 
 ```
@@ -36,6 +37,8 @@
 |events|list|true|none|none|
 |» type|string|true|none|none|
 |» added_at|string(date-time)|false|read-only|none|
+|ssl_cert_verification|body|boolean|false|True if the SSL certificates for HTTPS requests must be enabled|
+
 
 <h3 id="tocS_Attempt">Attempt</h3>
 <!-- backwards compatibility -->
