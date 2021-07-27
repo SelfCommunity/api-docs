@@ -57,6 +57,7 @@
   },
   "sent_at": "2019-08-24T14:15:22Z",
   "http_request_body": "string",
+  "http_request_signature_header": "string",
   "http_response_code": 0,
   "http_response_body": "string",
   "next_retry": "2019-08-24T14:15:22Z"
@@ -75,6 +76,7 @@
 |» added_at|string(date-time)|false|read-only|none|
 |sent_at|string(date-time)|false|read-only|none|
 |http_request_body|string|false|read-only|none|
+|http_request_signature_header|string|false|read-only|none|
 |http_response_code|integer|false|read-only|none|
 |http_response_body|string|false|read-only|none|
 |next_retry|string(date-time)|false|read-only|none|
