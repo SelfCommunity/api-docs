@@ -309,6 +309,15 @@
 |active_at|string(date-time)|false|read-only|none|
 |seen_by_id|list(integer)¦null|false|read-only|Id of [User](#schemauser) that have seen this activity|
 
+#### Enumerated Values
+
+|Property|Value|Description|
+|---|---|---|
+|type|comment|The activity involved is a comment|
+|type|vote|The activity involved is a vote|
+|type|pollvote|The activity involved is a poll vote|
+|type|follow|The activity involved is a follow. This type can be returned if the [Feed](#schemafeed) represent a [Discussion](#schemadiscussion)|
+
 <h3 id="tocS_FeedUnseenCount">FeedUnseenCount</h3>
 <!-- backwards compatibility -->
 <a id="schemafeedunseencount"></a>
