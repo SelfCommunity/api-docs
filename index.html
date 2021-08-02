@@ -413,6 +413,9 @@
                             <a href="#permission" class="toc-h3 toc-link" data-title="Permission">Permission</a>                            
                           </li>
                           <li>
+                            <a href="#platform-url" class="toc-h3 toc-link" data-title="Platform Url">Platform Url</a>                            
+                          </li>
+                          <li>
                             <a href="#get-user-39-s-categories" class="toc-h3 toc-link" data-title="Get User's Categories">Get User's Categories</a>                            
                           </li>
                           <li>
@@ -4855,6 +4858,60 @@ curl <span class="nt">-X</span> GET /api/v2/user/me/permission/ <span class="se"
 
 <aside class="notice">
 This operation requires authentication
+</aside>
+<h3 id='platform-url'>Platform Url</h3>
+<p><a id="opIdmePlatformUrl"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> GET /api/v2/user/me/platform_url/ <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;token&gt;"</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Accept</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Authorization: Bearer &lt;token&gt;</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/user/me/platform_url/</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div>
+<p>Retrieve the platform url starting from the Authorization user token</p>
+
+<h4 id="http-request">HTTP Request</h4>
+
+<p><code>GET /api/v2/user/me/platform_url/</code></p>
+
+<blockquote>
+<p>Example responses</p>
+
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"platform_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://URL/community/sso/?token=TOKEN&amp;is_owner=1&amp;domain=DOMAIN_URL&amp;next=/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-08-09T16:17:01Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<aside class="notice">
+This operation requires a staff member user.
 </aside>
 <h3 id='get-user-39-s-categories'>Get User&#39;s Categories</h3>
 <p><a id="opIdcategoriesUser"></a></p>
@@ -26883,6 +26940,13 @@ curl <span class="nt">-X</span> GET /api/v2/tag/ <span class="se">\</span>
 <td>Is this tag publicly visible?</td>
 </tr>
 <tr>
+<td>visibility_boost</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>The tag add a visibility boost</td>
+</tr>
+<tr>
 <td>ordering</td>
 <td>query</td>
 <td>string</td>
@@ -26908,6 +26972,7 @@ curl <span class="nt">-X</span> GET /api/v2/tag/ <span class="se">\</span>
       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"visibility_boost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -26998,6 +27063,7 @@ curl <span class="nt">-X</span> POST /api/v2/tag/ <span class="se">\</span>
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "deleted": false
 }</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -27035,6 +27101,7 @@ curl <span class="nt">-X</span> POST /api/v2/tag/ <span class="se">\</span>
   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visibility_boost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -27070,6 +27137,7 @@ curl <span class="nt">-X</span> POST /api/v2/tag/ <span class="se">\</span>
   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visibility_boost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -27186,13 +27254,15 @@ curl <span class="nt">-X</span> GET /api/v2/tag/search/ <span class="se">\</span
 <td>Is this tag publicly visible?</td>
 </tr>
 <tr>
-<td>ordering</td>
+<td>visibility_boost</td>
 <td>query</td>
 <td>string</td>
 <td>false</td>
-<td>Ordering fields (eg: <code>?ordering=name,created_at</code>), default is <code>-created_at</code> (minus char is used for descending ordering)</td>
+<td>Has the tag the attribute visibility boost?</td>
 </tr>
 </tbody></table>
+
+<p>|ordering|query|string|false|Ordering fields (eg: <code>?ordering=name,created_at</code>), default is <code>-created_at</code> (minus char is used for descending ordering)|</p>
 
 <blockquote>
 <p>Example responses</p>
@@ -27211,6 +27281,7 @@ curl <span class="nt">-X</span> GET /api/v2/tag/search/ <span class="se">\</span
       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"visibility_boost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -27348,6 +27419,7 @@ curl <span class="nt">-X</span> GET /api/v2/tag/<span class="o">{</span><span cl
   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visibility_boost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -27393,6 +27465,7 @@ curl <span class="nt">-X</span> PUT /api/v2/tag/<span class="o">{</span><span cl
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "deleted": false
 }</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -27430,6 +27503,7 @@ curl <span class="nt">-X</span> PUT /api/v2/tag/<span class="o">{</span><span cl
   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visibility_boost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -27472,6 +27546,7 @@ curl <span class="nt">-X</span> PUT /api/v2/tag/<span class="o">{</span><span cl
   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visibility_boost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -27516,7 +27591,8 @@ curl <span class="nt">-X</span> PATCH /api/v2/tag/<span class="o">{</span><span 
   "name": "string",
   "description": "string",
   "color": "string",
-  "visible": true,
+  "visible": true
+  "visibility_boost": true,
   "deleted": false
 }</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -27559,6 +27635,7 @@ You can use this endpoint to edit a single field passing only the id and the nee
   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visibility_boost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
@@ -27601,6 +27678,7 @@ You can use this endpoint to edit a single field passing only the id and the nee
   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visibility_boost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -38409,6 +38487,7 @@ This operation require admin or moderation role.
   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"visibility_boost"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-24T14:15:22Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -38464,6 +38543,13 @@ This operation require admin or moderation role.
 <td>false</td>
 <td>none</td>
 <td>Is this tag publicly visible?</td>
+</tr>
+<tr>
+<td>visibility_boost</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>The tag add a visibility boost</td>
 </tr>
 <tr>
 <td>created_at</td>
