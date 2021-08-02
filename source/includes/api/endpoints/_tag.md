@@ -51,6 +51,7 @@ This endpoint retrieves all tags.
 |active|query|string|false|Is the tag active?|
 |deleted|query|string|false|Is the tag deleted?|
 |visible|query|string|false|Is this tag publicly visible?|
+|visibility_boost|query|string|false|The tag add a visibility boost|
 |ordering|query|string|false|Ordering fields (eg: `?ordering=name,created_at`), default is `-created_at` (minus char is used for descending ordering)|
 
 > Example responses
@@ -70,6 +71,7 @@ This endpoint retrieves all tags.
       "description": "string",
       "color": "string",
       "visible": true,
+      "visibility_boost": true,
       "created_at": "2019-08-24T14:15:22Z",
       "active": true,
       "deleted": false
@@ -122,6 +124,7 @@ const inputBody = '{
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "deleted": false
 }';
 const headers = {
@@ -161,6 +164,7 @@ This endpoint creates a tag.
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "deleted": false
 }
 ```
@@ -183,6 +187,7 @@ This endpoint creates a tag.
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "created_at": "2019-08-24T14:15:22Z",
   "active": true,
   "deleted": false
@@ -250,6 +255,8 @@ This endpoint performs search to Tags.
 |active|query|string|false|Is the tag active?|
 |deleted|query|string|false|Is the tag deleted?|
 |visible|query|string|false|Is this tag publicly visible?|
+|visibility_boost|query|string|false|Has the tag the attribute visibility boost?|
+
 |ordering|query|string|false|Ordering fields (eg: `?ordering=name,created_at`), default is `-created_at` (minus char is used for descending ordering)|
 
 > Example responses
@@ -269,6 +276,7 @@ This endpoint performs search to Tags.
       "description": "string",
       "color": "string",
       "visible": true,
+      "visibility_boost": true,
       "created_at": "2019-08-24T14:15:22Z",
       "active": true,
       "deleted": false
@@ -355,6 +363,7 @@ This endpoint retrieves a specific tag.
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "created_at": "2019-08-24T14:15:22Z",
   "active": true,
   "deleted": false
@@ -394,6 +403,7 @@ const inputBody = '{
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "deleted": false
 }';
 const headers = {
@@ -432,6 +442,7 @@ This endpoint updates a specific tag.
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "deleted": false
 }
 ```
@@ -455,6 +466,7 @@ This endpoint updates a specific tag.
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "created_at": "2019-08-24T14:15:22Z",
   "active": true,
   "deleted": false
@@ -493,7 +505,8 @@ const inputBody = '{
   "name": "string",
   "description": "string",
   "color": "string",
-  "visible": true,
+  "visible": true
+  "visibility_boost": true,
   "deleted": false
 }';
 const headers = {
@@ -537,6 +550,7 @@ For example to change `active` or `visible` flags in an admin list/table interfa
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "deleted": false
 }
 ```
@@ -560,6 +574,7 @@ For example to change `active` or `visible` flags in an admin list/table interfa
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "created_at": "2019-08-24T14:15:22Z",
   "active": true,
   "deleted": false

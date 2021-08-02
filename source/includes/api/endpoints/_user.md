@@ -1389,6 +1389,70 @@ Some of the permissions in the list depend on global community settings.
 This operation requires authentication
 </aside>
 
+
+### Platform Url
+
+<a id="opIdmePlatformUrl"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /api/v2/user/me/platform_url/ \
+  -H 'Accept: application/json'
+  -H "Authorization: Bearer <token>"
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'application/json',
+  'Authorization: Bearer <token>'
+};
+
+fetch('/api/v2/user/me/platform_url/',
+{
+  method: 'GET',
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+Retrieve the platform url starting from the Authorization user token
+
+<h4 id="http-request">HTTP Request</h4>
+
+`GET /api/v2/user/me/platform_url/`
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+    "platform_url": "https://URL/community/sso/?token=TOKEN&is_owner=1&domain=DOMAIN_URL&next=/",
+    "token_details": {
+        "access_token": "string",
+        "expires_in": "2021-08-09T16:17:01Z",
+        "token_type": "string",
+        "refresh_token": "string",
+        "scope": "string"
+    }
+}
+```
+
+<aside class="notice">
+This operation requires a staff member user.
+</aside>
+
+
+
 ### Get User's Categories
 
 <a id="opIdcategoriesUser"></a>

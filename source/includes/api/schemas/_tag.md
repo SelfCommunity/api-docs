@@ -14,6 +14,7 @@
   "description": "string",
   "color": "string",
   "visible": true,
+  "visibility_boost": true,
   "created_at": "2019-08-24T14:15:22Z",
   "deleted": false
 }
@@ -30,6 +31,7 @@
 |description|string¦null|false|none|Short description of the tag|
 |color|string|false|none|Hexadecimal format color code with #|
 |visible|boolean|false|none|Is this tag publicly visible?|
+|visibility_boost|boolean|false|none|The tag add a visibility boost|
 |created_at|string(date-time)|false|read-only|Creation date time|
 |active|boolean|false|none|Is this tag active?|
 |deleted|boolean|false|none|Is this tag deleted?|
