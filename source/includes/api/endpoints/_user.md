@@ -1449,13 +1449,13 @@ Using this url the logged user (must be a staff member) can access the platform 
 ```
 
 
-<h4 id="listfeeduser-responses">Responses</h4>
+<h4 id="listplatformurl-responses">Responses</h4>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
 
-<h4 id="listfeeduser-responseschema">Response Schema</h4>
+<h4 id="listplatformurl-responseschema">Response Schema</h4>
 
 Status Code **200**
 
