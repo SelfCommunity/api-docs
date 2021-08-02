@@ -4888,7 +4888,8 @@ curl <span class="nt">-X</span> GET /api/v2/user/me/platform_url/ <span class="s
 <span class="p">});</span>
 
 </code></pre></div>
-<p>Retrieve the platform url starting from the Authorization user token</p>
+<p>Retrieve the platform url starting from the Authorization user token.
+Using this url the logged user (must be a staff member) can access the platform to manage the community.</p>
 
 <h4 id="http-request">HTTP Request</h4>
 
@@ -4910,6 +4911,47 @@ curl <span class="nt">-X</span> GET /api/v2/user/me/platform_url/ <span class="s
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<h4 id="listfeeduser-responses">Responses</h4>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>none</td>
+<td>Inline</td>
+</tr>
+</tbody></table>
+
+<h4 id="listfeeduser-responseschema">Response Schema</h4>
+
+<p>Status Code <strong>200</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>» platform_url</td>
+<td>string(uri)</td>
+<td>The URL to access the platform</td>
+</tr>
+<tr>
+<td>» token_details</td>
+<td>string</td>
+<td>Some informative token details</td>
+</tr>
+</tbody></table>
+
 <aside class="notice">
 This operation requires a staff member user.
 </aside>
