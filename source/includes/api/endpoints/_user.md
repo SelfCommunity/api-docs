@@ -1424,7 +1424,8 @@ fetch('/api/v2/user/me/platform_url/',
 
 ```
 
-Retrieve the platform url starting from the Authorization user token
+Retrieve the platform url starting from the Authorization user token.
+Using this url the logged user (must be a staff member) can access the platform to manage the community.
 
 <h4 id="http-request">HTTP Request</h4>
 
@@ -1446,6 +1447,23 @@ Retrieve the platform url starting from the Authorization user token
     }
 }
 ```
+
+
+<h4 id="listfeeduser-responses">Responses</h4>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|none|Inline|
+
+<h4 id="listfeeduser-responseschema">Response Schema</h4>
+
+Status Code **200**
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|» platform_url|string(uri)|The URL to access the platform|
+|» token_details|string|Some informative token details|
+
 
 <aside class="notice">
 This operation requires a staff member user.
