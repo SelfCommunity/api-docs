@@ -1130,7 +1130,6 @@ See [UserSettings](#schemausersettings) for the list of possible user settings.
 {
   "qa_frequency": -1,
   "email_notification_not_qa": 1,
-  "interests_frequency": -1,
   "mobile_notifications_scmty": 1,
   "toast_notifications_emit_sound": 1,
   "show_toast_notifications": 1
@@ -1164,7 +1163,7 @@ curl -X PATCH /api/v2/user/{id}/settings/ \
 
 ```javascript
 const inputBody = '{
-  "interests_frequency": -1
+  "qa_frequency": -1
 }';
 const headers = {
   'Content-Type':'application/x-www-form-urlencoded',
@@ -1199,7 +1198,7 @@ See [UserSettings](#schemausersettings) for the list of possible user settings.
 
 ```json
 {
-  "interests_frequency": -1
+  "qa_frequency": -1
 }
 ```
 

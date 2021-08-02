@@ -1884,7 +1884,6 @@ All events with prefix notification.* include in the payload a field "recipients
     "data": {
         "qa_frequency": 0,
         "email_notification_not_qa": 0,
-        "interests_frequency": 0,
         "mobile_notifications_scmty": 1,
         "toast_notifications_emit_sound": 1,
         "show_toast_notifications": 0,
