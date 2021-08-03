@@ -3514,6 +3514,67 @@ This operation require authentication
 </aside>
 
 
+### Check email token
+
+<a id="opIdcheckEmailToken"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /api/v2/user/check_email_token/ \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+
+```
+
+```javascript
+const headers = {
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
+};
+
+fetch('/api/v2/user/check_email_token/',
+{
+  method: 'GET',
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+This endpoint check an email token
+
+<h4 id="http-request">HTTP Request</h4>
+
+`GET /api/v2/user/check_email_token/`
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+    "is_valid": true
+}
+```
+
+<h4 id="checkemailtoken-responses">Responses</h4>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|A boolean|none|
+
+<aside class="notice">
+This operation require authentication
+</aside>
+
+
+
 
 
 
