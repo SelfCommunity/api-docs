@@ -20,11 +20,11 @@
 
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
-|qa_frequency|integer|false|none|Email notification of interactions in Discussions, Posts, Comments|
-|email_notification_not_qa|integer|false|none|All email notifications except those related to 'qa_frequency'. Ex. connections, follow, flags, etc.|
-|mobile_notifications_scmty|integer|false|none|Mobile notifications|
-|show_toast_notifications|integer|false|none|Show a popup (frontend) when receive a notification|
-|toast_notifications_emit_sound|integer|false|none|Emit a sound when the notification popup is shown. See 'show_toast_notifications'.|
+|qa_frequency|integer|false|none|Frequency of the email notifications for all interactions (except for private messages notifications)
+|email_notification_not_qa|integer|false|none|Enable private messages notifications also via mail|
+|mobile_notifications_scmty|integer|false|none|Enable mobile app notifications|
+|show_toast_notifications|integer|false|none|Shows a popup when the user receive a notification (only if the frontend is enabled)|
+|toast_notifications_emit_sound|integer|false|none|Emit a sound when the notification popup is shown. See 'show_toast_notifications'|
 
 
 #### Enumerated Values
