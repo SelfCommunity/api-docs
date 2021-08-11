@@ -317,7 +317,7 @@ This endpoint searches dynamic preferences.
 
 <h5 id="http-request">HTTP Request</h5>
 
-`GET /api/v2/dynamic_preference/`
+`GET /api/v2/dynamic_preference/search/`
 
 <h4 id="searchglobalpreferencemodels-parameters">Parameters</h4>
 
@@ -327,6 +327,7 @@ This endpoint searches dynamic preferences.
 | offset   | query | integer | false    | The initial index from which to return the results. |
 | search   | query | string  | false    | A search term.                                      |
 | section  | query | string  | false    | Filter all preferences in a section                 |
+| keys     | query | string  | false    | Get a list of specific preferences in the format: section_1.name_1,...,section_n.name_n. |
 | ordering | query | string  | false    | Which field to use when ordering the results.       |
 
 > Example responses
