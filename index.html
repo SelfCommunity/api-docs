@@ -2271,7 +2271,7 @@ curl <span class="nt">-X</span> GET /api/v2/dynamic_preference/search/ <span cla
 
 <h5 id="http-request">HTTP Request</h5>
 
-<p><code>GET /api/v2/dynamic_preference/</code></p>
+<p><code>GET /api/v2/dynamic_preference/search/</code></p>
 
 <h4 id="searchglobalpreferencemodels-parameters">Parameters</h4>
 
@@ -2311,6 +2311,13 @@ curl <span class="nt">-X</span> GET /api/v2/dynamic_preference/search/ <span cla
 <td>string</td>
 <td>false</td>
 <td>Filter all preferences in a section</td>
+</tr>
+<tr>
+<td>keys</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Get a list of specific preferences in the format: section_1.name_1,...,section_n.name_n.</td>
 </tr>
 <tr>
 <td>ordering</td>
