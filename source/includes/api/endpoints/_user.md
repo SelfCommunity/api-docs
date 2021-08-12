@@ -1430,6 +1430,12 @@ Using this url the logged user (must be a staff member) can access the platform 
 
 `GET /api/v2/user/me/platform_url/`
 
+<h4 id="listplatformurl-parameters">Parameters</h4>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|next|query|string|false|Redirect to this relative path (eg: /moderation/flags/).|
+
 > Example responses
 
 > 200 Response
